@@ -4,6 +4,10 @@ $container-width-value: 1240;
     --color-white: #ffffff;
     --color-black: #000000;
     --color-green: #b9ff66;
+    // дублируем, чтобы было по аналогии с видосом,
+    // хотя остальные цвета заданы
+    // не по семантике, а по названию
+    --color-accent: #b9ff66;
     --color-grey: #f3f3f3;
     --color-grey-alt: 898989;
     --color-dark: #191a23;
