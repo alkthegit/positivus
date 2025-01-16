@@ -9,7 +9,7 @@ $mobile: 768px;
 }
 
 @mixin media-breakpoint-down($bp) {
-    @media (max-width: $bp) {
+    @media (width < $bp) {
         @content;
     }
 }
@@ -68,6 +68,4 @@ button {
     @include hover {
         background-color: bisque;
     }
-
-    ;
 }
