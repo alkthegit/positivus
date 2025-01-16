@@ -15,37 +15,37 @@ $mobile: 768px;
 }
 
 @mixin desktop {
-    @include media-breakpoint-up($desktop) {
-        @content;
-    }
-}
-
-@mixin tablet {
-    @include media-breakpoint-up($tablet) {
-        @content;
-    }
-}
-
-@mixin mobile {
-    @include media-breakpoint-up($mobile) {
-        @content;
-    }
-}
-
-@mixin desktop-below {
     @include media-breakpoint-down($desktop) {
         @content;
     }
 }
 
-@mixin tablet-below {
+@mixin tablet {
     @include media-breakpoint-down($tablet) {
         @content;
     }
 }
 
-@mixin mobile-below {
+@mixin mobile {
     @include media-breakpoint-down($mobile) {
+        @content;
+    }
+}
+
+@mixin desktop-above {
+    @include media-breakpoint-up($desktop) {
+        @content;
+    }
+}
+
+@mixin tablet-above {
+    @include media-breakpoint-up($tablet) {
+        @content;
+    }
+}
+
+@mixin mobile-above {
+    @include media-breakpoint-up($mobile) {
         @content;
     }
 }
@@ -61,11 +61,5 @@ $mobile: 768px;
         &:active {
             @content;
         }
-    }
-}
-
-button {
-    @include hover {
-        background-color: bisque;
     }
 }
