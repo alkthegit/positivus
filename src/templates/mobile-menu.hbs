@@ -1,33 +1,34 @@
 <dialog class="mobile-overlay visible-mobile"
-    id="mobileOverlay">
+    id="mobileOverlay" aria-label="navigation manu">
     <form class="mobile-overlay__close-button-wrapper">
-        <input class="mobile-overlay__close-button cross-button"
+        <button class="mobile-overlay__close-button cross-button"
             type="submit"
             formmethod="dialog"
-            value=""
             aria-label="Close navigation menu">
+            </button>
     </form>
     <section class="mobile-overlay__body">
-        <nav class="mobile-overlay__nav">
-            <ul class="mobile-ovelay__list">
-                <li class="mobile-ovelay-item">
-                    <a class="mobile-ovelay-link"
+        <nav class="mobile-overlay__nav"
+            aria-labelledby="mobileOverlay">
+            <ul class="mobile-overlay__list">
+                <li class="mobile-overlay-item">
+                    <a class="mobile-overlay-link"
                         href="#">About us</a>
                 </li>
-                <li class="mobile-ovelay-item">
-                    <a class="mobile-ovelay-link"
+                <li class="mobile-overlay-item">
+                    <a class="mobile-overlay-link"
                         href="#">Services</a>
                 </li>
-                <li class="mobile-ovelay-item">
-                    <a class="mobile-ovelay-link"
+                <li class="mobile-overlay-item">
+                    <a class="mobile-overlay-link"
                         href="#">Use Cases</a>
                 </li>
-                <li class="mobile-ovelay-item">
-                    <a class="mobile-ovelay-link"
+                <li class="mobile-overlay-item">
+                    <a class="mobile-overlay-link"
                         href="#">Pricing</a>
                 </li>
-                <li class="mobile-ovelay-item">
-                    <a class="mobile-ovelay-link"
+                <li class="mobile-overlay-item">
+                    <a class="mobile-overlay-link"
                         href="#">Blog</a>
                 </li>
             </ul>

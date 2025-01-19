@@ -19,7 +19,7 @@
     border: none;
 }
 
-@mixin flex-center($inline) {
+@mixin flex-center($inline: false) {
     @if $inline {
         display: inline-flex;
     }
