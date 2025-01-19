@@ -1,0 +1,36 @@
+@use '../variables' as *;
+@use '../mixins' as *;
+@use '../media' as *;
+
+.button {
+    @include reset-button;
+    @include flex-center(center);
+
+    height: var(--button-height);
+    border-radius: var(--border-radius);
+    padding: 20px 35px;
+
+    font-size: 20px;
+
+    &_primary {
+        background-color: var(--color-dark);
+        color: var(--color-white);
+
+    }
+
+    &_secondary {
+        background-color: transparent;
+        border: var(--border);
+        color: var(--color-black);
+
+        @include hover {
+            background-color: var(--color-accent);
+            color: var(--color-black);
+        }
+    }
+
+    &_tertiary {
+        background-color: var(--color-green);
+        color: var(--color-black);
+    }
+}
