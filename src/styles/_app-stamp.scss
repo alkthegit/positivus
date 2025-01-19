@@ -1,0 +1,20 @@
+.app-stamp {
+    position: absolute !important;
+    right: 0 !important;
+    top: 0 !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    background-color: rgb(56, 56, 56) !important;
+    font-size: 10px !important;
+    color: white !important;
+    height: 1.5em;
+    width: 10em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+
+    p {
+        line-height: 0;
+    }
+}
