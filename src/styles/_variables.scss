@@ -1,3 +1,4 @@
+@use './media' as *;
 $container-width-value: 1240;
 
 :root {
@@ -28,4 +29,12 @@ $container-width-value: 1240;
     --input-height: 59px;
     --button-height: 68px;
     --transition-duration: 0.2s;
+
+    @include desktop {
+        --section-padding-block: 60px;
+    }
+
+    @include mobile {
+        --section-padding-block: 60px;
+    }
 }
