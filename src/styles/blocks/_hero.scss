@@ -1,0 +1,113 @@
+@use '../media' as *;
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    row-gap: 70px;
+
+    @include desktop {
+        row-gap: 60px;
+    }
+
+    &__main {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        column-gap: 30px;
+
+        @include mobile {
+            flex-direction: column;
+        }
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        row-gap: 35px;
+
+        max-width: 530px;
+
+        @include mobile {
+            display: contents;
+        }
+    }
+
+    &__title {
+        @include mobile {
+            margin-bottom: 10px;
+            order: -2;
+        }
+    }
+
+    &__description p {
+        font-size: 20px;
+        line-height: 1.4;
+
+        @include mobile {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__button {
+        max-width: 390px;
+        margin-inline: auto;
+
+        @include mobile {
+            width: 100%;
+            order: 1;
+        }
+    }
+
+    &__partners {
+        &-list {
+            display: flex;
+            justify-content: space-between;
+            column-gap: 37px;
+
+            @include tablet {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                row-gap: 20px;
+                place-items: center;
+            }
+
+            @include xs {
+                --offset-x: 60px;
+                width: calc(100vw + var(--offset-x) * 2);
+                margin-left: calc(-1 * (var(--offset-x) + var(--container-padding-inline)));
+                column-gap: 0px;
+            }
+        }
+
+        &-item {
+            place-self: center start;
+
+            &:nth-child(-n + 3) {
+                place-self: center end;
+            }
+        }
+
+        &-image {
+            filter: grayscale(1);
+
+            @include mobile {
+                max-width: 125px;
+            }
+        }
+    }
+
+    &__image {
+        aspect-ratio: 1;
+
+        @include tablet {
+            max-width: 40%;
+        }
+
+        @include mobile {
+            order: -1;
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+}
