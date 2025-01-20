@@ -1,0 +1,58 @@
+@use '../media' as *;
+
+.banner {
+    --banner-image-offset-y: 24px;
+
+    padding-block: var(--banner-image-offset-y);
+
+    @include tablet {
+        --banner-image-offset-y: 0px;
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        background-color: var(--color-grey);
+
+        padding-right: 135px;
+        border-radius: var(--border-radius-large);
+
+        @include mobile {
+            padding-right: 0;
+        }
+    }
+
+    &__body {
+        padding: 60px;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        row-gap: 26px;
+
+        @include tablet {
+            padding: 50px;
+        }
+
+        @include mobile {
+            row-gap: 20px;
+        }
+
+
+    }
+
+    &__title {
+        font-weight: 500;
+    }
+
+    &__image {
+        align-self: center;
+        margin-block: calc(-1 * var(--banner-image-offset-y));
+
+        @include tablet {
+            max-width: 40%;
+            height: auto;
+        }
+    }
+}

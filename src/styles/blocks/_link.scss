@@ -1,0 +1,120 @@
+@use '../mixins' as *;
+@use '../media' as *;
+
+%simple-link {
+    order: 1;
+    width: 21px;
+    height: 20px;
+    border-radius: 0;
+    background: transparent;
+}
+
+.link {
+    --bg-color: var(--color-white);
+    --icon-color: var(--color-accent);
+
+    display: inline-flex;
+    align-items: center;
+    column-gap: 15px;
+    position: relative;
+    height: 41px;
+    background-color: transparent;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+
+    &:hover {
+        @include hover {
+            opacity: 0.7;
+        }
+    }
+
+    &__icon-wrapper {
+
+        @include flex-center;
+        @include square(41px);
+
+        position: relative;
+        display: flex;
+        border-radius: 50%;
+
+        background-color: var(--bg-color);
+        color: var(--icon-color);
+
+        svg * {
+            fill: currentColor;
+        }
+    }
+
+    &__icon {
+        width: 21px;
+        height: 20px;
+    }
+
+    &_light {
+        --bg-color: var(--color-white);
+        --icon-color: var(--color-accent);
+    }
+
+    &_light-alt {
+        color: var(--color-white);
+        --bg-color: var(--color-white);
+        --icon-color: var(--color-black) !important;
+    }
+
+    &_dark {
+        --bg-color: var(--color-dark);
+        --icon-color: var(--color-accent) !important;
+    }
+
+    &_dark-alt {
+        --bg-color: var(--color-dark);
+        --icon-color: var(--color-white) !important;
+    }
+
+    &_accent {
+        --bg-color: var(--color-accent);
+        --icon-color: var(--color-black) !important;
+    }
+
+    &_accent-alt {
+        --bg-color: var(--color-accent);
+        --icon-color: var(--color-white) !important;
+    }
+
+    &_icon-only &__label {
+        display: none;
+    }
+
+    &_simple {
+        @extend %simple-link;
+        --icon-color: var(--color-white);
+    }
+
+    &_simple-light {
+        @extend %simple-link;
+        --icon-color: var(--color-white);
+    }
+
+    &_simple-dark {
+        @extend %simple-link;
+        --icon-color: var(--color-black);
+    }
+
+    &_simple-accent {
+        @extend %simple-link;
+        --icon-color: var(--color-accent);
+    }
+}
+
+.service-card_light .link.service-card__link {
+    @extend .link_dark;
+}
+
+.service-card_accent .link.service-card__link {
+    @extend .link_dark;
+}
+
+.service-card_dark .link.service-card__link {
+    @extend .link_light-alt;
+}
