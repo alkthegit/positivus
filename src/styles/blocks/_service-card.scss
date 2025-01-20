@@ -1,0 +1,92 @@
+@use '../media' as *;
+@use 'link' as *;
+
+.service-card {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 30px;
+    min-height: 310px;
+    padding: 50px;
+    border: var(--border);
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--shadow);
+
+    @include mobile {
+        display: flex;
+        flex-wrap: wrap;
+        row-gap: 27px;
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        row-gap: 30px;
+
+        @include mobile {
+            display: contents;
+        }
+    }
+
+    &__image {
+        align-self: center;
+
+        @include desktop {
+            max-width: 50%;
+            height: auto;
+        }
+    }
+
+    &__title {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+
+        span {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        @include mobile {
+            flex: 1 0 100%;
+        }
+    }
+
+    &_light {
+        background-color: var(--color-grey);
+
+        .puddle-bg {
+            background-color: var(--color-accent);
+            color: var(--color-black)
+        }
+    }
+
+    &_dark {
+        background-color: var(--color-dark);
+
+        .puddle-bg {
+            background-color: var(--color-accent);
+            color: var(--color-black)
+        }
+    }
+
+    &_accent {
+        background-color: var(--color-accent);
+
+        .puddle-bg {
+            background-color: var(--color-white);
+            color: var(--color-black)
+        }
+    }
+
+    &__link {
+        align-self: flex-end;
+
+        @include mobile {
+            &-label {
+                display: none;
+            }
+        }
+
+    }
+}

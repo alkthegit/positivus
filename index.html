@@ -9,13 +9,14 @@
 </head>
 
 <body>
+  {{> header }}
+  <main class="content">
+    {{> hero}}
+    {{> services}}
+  </main>
+  {{> mobile-menu }}
   <script type="module"
     src="/src/main.js"></script>
-</body>
-{{> header }}
-<main class="content">
-  {{> hero}}
-</main>
+  </body>
 
-{{> mobile-menu }}
 </html>

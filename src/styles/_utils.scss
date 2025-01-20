@@ -1,4 +1,5 @@
 @use 'media' as *;
+@use 'mixins' as *;
 
 .container {
     max-width: calc(var(--container-width) + 2 * var(--container-padding-inline));
@@ -7,16 +8,7 @@
 }
 
 .visually-hidden {
-    position: absolute;
-    width: 1px !important;
-    height: 1px !important;
-    max-width: -1px !important;
-    border: 0 !important;
-    padding: 0 !important;
-    white-space: nowrap !important;
-    clip-path: inset(100%) !important;
-    clip: rect(0, 0, 0, 0) !important;
-    overflow: hidden !important;
+    @include visually-hidden;
 }
 
 .hidden-mobile {
