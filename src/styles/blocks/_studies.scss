@@ -1,0 +1,59 @@
+@use '../media' as *;
+
+.studies {
+    @include desktop-above {
+        padding: 70px 60px;
+    }
+
+    @include mobile-above {
+        padding: 50px;
+        color: var(--color-white);
+        background-color: var(--color-dark);
+        border-radius: var(--border-radius-large);
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+
+        @include mobile {
+            overflow-x: scroll;
+            scroll-snap-type: x mandatory;
+            column-gap: 20px;
+        }
+    }
+
+    &__item {
+        --padding-x: 64px;
+
+        display: flex;
+        flex-direction: column;
+        row-gap: 20px;
+
+        @include desktop {
+            --padding-x: 32px;
+        }
+
+        @include mobile-above {
+            &:not(:last-child) {
+                padding-right: var(--padding-x);
+                border-right: 1px solid var(--color-white);
+            }
+
+            &:not(:first-child) {
+                padding-left: var(--padding-x);
+            }
+        }
+
+        @include mobile {
+            min-width: 350px;
+            padding: 42px 50px;
+            color: var(--color-white);
+            background-color: var(--color-dark);
+            border-radius: var(--border-radius-large);
+
+            scroll-snap-align: start;
+        }
+
+    }
+}
