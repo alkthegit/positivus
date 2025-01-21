@@ -1,17 +1,20 @@
 @use '../mixins' as *;
 @use '../media' as *;
 
-%simple-link {
-    order: 1;
-    width: 21px;
-    height: 20px;
-    border-radius: 0;
-    background: transparent;
+@mixin simple-link {
+    --bg-color: transparent;
+    --icon-order: 1;
+    --icon-border-radius: 0;
+    --icon-wrapper-width: auto;
 }
 
 .link {
     --bg-color: var(--color-white);
     --icon-color: var(--color-accent);
+    --icon-order: 0;
+    --icon-border-radius: 50%;
+    --icon-wrapper-width: 41px;
+    --label-color: currentColor;
 
     display: inline-flex;
     align-items: center;
@@ -30,13 +33,13 @@
     }
 
     &__icon-wrapper {
-
+        order: var(--icon-order);
         @include flex-center;
-        @include square(41px);
+        @include square(var(--icon-wrapper-width));
 
         position: relative;
         display: flex;
-        border-radius: 50%;
+        border-radius: var(--icon-border-radius);
 
         background-color: var(--bg-color);
         color: var(--icon-color);
@@ -49,6 +52,10 @@
     &__icon {
         width: 21px;
         height: 20px;
+    }
+
+    &__label {
+        color: var(--label-color);
     }
 
     &_light {
@@ -87,22 +94,25 @@
     }
 
     &_simple {
-        @extend %simple-link;
+        @include simple-link;
         --icon-color: var(--color-white);
     }
 
     &_simple-light {
-        @extend %simple-link;
+        @include simple-link;
+        --label-color: var(--color-white);
         --icon-color: var(--color-white);
     }
 
     &_simple-dark {
-        @extend %simple-link;
+        @include simple-link;
+        --label-color: var(--color-black);
         --icon-color: var(--color-black);
     }
 
     &_simple-accent {
-        @extend %simple-link;
+        @include simple-link;
+        --label-color: var(--color-accent);
         --icon-color: var(--color-accent);
     }
 }
