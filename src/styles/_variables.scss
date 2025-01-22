@@ -19,7 +19,7 @@ $container-width-value: 1240;
     --border-radius: 14px;
     --border-radius-small: 7px;
     --border-radius-large: 45px;
-    --shadow: 0px 5px 0px #191A23;
+    --shadow: 0px 5px 0px var(--color-dark);
 
     --font-family-base: "Space Grotesk", sans-serif;
 
