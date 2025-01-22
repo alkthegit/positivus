@@ -1,0 +1,118 @@
+@use '../media' as *;
+@use '../mixins' as *;
+
+.process {
+    &__list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+
+        counter-reset: my-counter;
+        list-style: none;
+
+        @include mobile {
+            row-gap: 20px;
+        }
+    }
+
+    &__item {
+        --counter-content: counter(my-counter);
+        counter-increment: my-counter;
+
+        &:nth-child(-n+9) {
+            --counter-content: '0' counter(my-counter);
+        }
+    }
+
+    &__accordion {
+        --process-bg-color: var(--color-grey);
+        --plus-rotate: 90deg;
+        background-color: var(--process-bg-color);
+        padding: 40px 60px;
+
+        border: 1px solid var(--color-dark);
+        box-shadow: 0px 5px 0px var(--color-dark);
+        box-shadow: var(--shadow);
+        border-radius: var(--border-radius-large);
+
+        &[open] {
+            --process-bg-color: var(--color-accent);
+            --plus-rotate: 0deg;
+        }
+
+        @include hover {
+            transition-duration: var(--transition-duration);
+            --process-bg-color: var(--color-accent);
+        }
+
+        @include mobile {
+            padding: 30px;
+        }
+
+        &-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            column-gap: 50px;
+
+            cursor: pointer;
+
+            user-select: none;
+
+            @include mobile {
+                column-gap: 28px;
+            }
+        }
+
+        &-title {
+            @include fluid-text(30, 18);
+            display: flex;
+            align-items: center;
+            column-gap: 25px;
+
+            &::before {
+                content: var(--counter-content);
+
+                @include mobile {
+                    font-size: 1.667em;
+                }
+            }
+
+            @include mobile {
+                column-gap: 33px;
+            }
+        }
+
+        &-indicator {
+            position: relative;
+            @include flex-center;
+            @include square(clamp(30px, 5vw, 58px));
+            flex-shrink: 0;
+            border: 1px solid var(--color-dark);
+            background-color: var(--color-grey);
+            border-radius: 50%;
+
+            &::before,
+            &::after {
+                content: "";
+                @include abs-center;
+
+                width: 45%;
+                height: 10%;
+
+                background-color: var(--color-dark);
+            }
+
+            &::after {
+                rotate: var(--plus-rotate);
+            }
+        }
+
+        &-body {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid var(--color-dark);
+        }
+    }
+
+}
