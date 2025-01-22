@@ -1,3 +1,5 @@
+@use '../media' as *;
+
 .grid {
     --grid-columns: 1;
     display: grid;
@@ -7,6 +9,22 @@
     @for $i from 2 through 12 {
         &_#{$i} {
             --grid-columns: #{$i};
+        }
+    }
+
+    &_2 {
+        @include tablet {
+            --grid-columns: 1;
+        }
+    }
+
+    &_3 {
+        @include desktop {
+            --grid-columns: 2;
+        }
+
+        @include mobile {
+            --grid-columns: 1;
         }
     }
 }

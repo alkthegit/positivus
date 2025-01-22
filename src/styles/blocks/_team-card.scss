@@ -1,0 +1,70 @@
+@use '../mixins' as *;
+@use '../media' as *;
+
+.team-card {
+    height: 100%;
+    padding: 40px 35px 60px;
+    border: var(--border);
+    border-radius: var(--border-radius-large);
+    box-shadow: var(--shadow);
+
+    @include mobile {
+        padding-inline: 50px;
+    }
+
+    &__image {
+        @include square(100px);
+
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+
+    &__info {
+        align-self: end;
+
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
+    }
+
+    &__link {
+        position: relative;
+        @include square(34px);
+        align-self: start;
+        flex-shrink: 0;
+
+        border-radius: 50%;
+        background-color: var(--color-black);
+
+        &-image {
+            @include abs-center;
+            @include square(17px);
+
+            color: var(--color-accent);
+
+            margin-left: auto;
+        }
+    }
+
+    &__header {
+        display: flex;
+    }
+
+    &__name {
+        &:not(:last-child) {
+            margin-bottom: 3px;
+        }
+    }
+
+    &__body {
+        --team-card-body-margin-top: 28px;
+        margin-top: var(--team-card-body-margin-top);
+        padding-top: var(--team-card-body-margin-top);
+        border-top: var(--border);
+
+        @include mobile{
+            --team-card-body-margin-top: 20px;
+        }
+    }
+}

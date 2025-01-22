@@ -1,0 +1,23 @@
+@use '../mixins' as *;
+@use '../media' as *;
+@use 'grid' as *;
+
+.team {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+
+    &__list {
+        gap: 40px;
+    }
+
+    &__button {
+        align-self: end;
+        min-width: 269px;
+
+        @include xs {
+            width: 100%;
+        }
+    }
+
+}
