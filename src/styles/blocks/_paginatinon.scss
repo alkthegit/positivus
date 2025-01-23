@@ -1,0 +1,27 @@
+@use '../mixins' as *;
+@use '../media' as *;
+
+.pagination {
+    &__list {
+        display: flex;
+    }
+
+    &__button {
+        @include reset-button;
+        @include flex-center;
+        @include square(24px);
+        color: var(--color-grey);
+
+        svg {
+            @include square(14px);
+        }
+
+        &.is-current {
+            color: var(--color-accent);
+        }
+
+        @include hover {
+            color: var(--color-accent);
+        }
+    }
+}

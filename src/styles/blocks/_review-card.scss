@@ -1,0 +1,60 @@
+@use '../mixins' as *;
+@use '../media' as *;
+
+.review-card {
+    --review-card-corner-width: 40px;
+    --review-card-corner-offset-left: 52px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 48px;
+
+    @include mobile {
+        row-gap: 44px;
+    }
+
+    &__body {
+        position: relative;
+
+        padding: 48px var(--review-card-corner-offset-left) var(--review-card-corner-offset-left);
+        border: 1px solid var(--color-accent);
+        border-radius: var(--border-radius-large);
+
+        &::after {
+            @include square(var(--review-card-corner-width));
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 100%;
+
+            background-color: var(--color-dark);
+            border: inherit;
+            rotate: -45deg;
+            translate: var(--review-card-corner-offset-left) -50%;
+
+            clip-path: path('M 0 0 \
+                L 0 40 \
+                L 40 40 \
+                L 0, 0')
+        }
+
+        @include mobile {
+            padding: 30px;
+        }
+    }
+
+    &__footer {
+        display: flex;
+        flex-direction: column;
+
+        padding-left: calc(var(--review-card-corner-offset-left) + var(--review-card-corner-width) / 2);
+    }
+
+    &__name,
+    &__company {
+        font-style: normal;
+    }
+
+    &__name {
+        color: var(--color-accent);
+    }
+}
