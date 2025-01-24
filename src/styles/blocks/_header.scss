@@ -23,6 +23,7 @@
     }
 
     &__logo {
+        color: var(--color-black);
         @include tablet {
             max-width: 120px;
         }
