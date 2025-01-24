@@ -32,5 +32,10 @@
     &_tertiary {
         background-color: var(--color-green);
         color: var(--color-black);
+
+        @include hover {
+            color: var(--color-white);
+            background-color: var(--color-dark);
+        }
     }
 }

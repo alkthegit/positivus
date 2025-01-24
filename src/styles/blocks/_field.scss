@@ -1,0 +1,73 @@
+@use '../media' as *;
+@use '../mixins' as *;
+
+.field {
+    --field-input-height: var(--input-height);
+    --field-input-text-color: var(--color-dark);
+    --field-input-bg-color: var(--color-white);
+    --field-input-border-color: var(--color-dark);
+    --field-input-placeholder-color: var(--color-grey-alt);
+    --field-input-hover-bg-color: var(--color-accent);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 5px;
+
+    @include mobile {
+        row-gap: 10px;
+    }
+
+    &_high {
+        --field-input-height: var(--button-height);
+    }
+
+    &_dark-bg {
+        --field-input-bg-color: var(--color-dark-alt);
+        --field-input-placeholder-color: var(--color-white);
+        --field-input-border-color: var(--color-white);
+        --field-input-hover-bg-color: var(--color-dark);
+        --field-input-text-color: var(--color-accent);
+    }
+
+    &__label {
+        @include fluid-text(16, 14);
+    }
+
+    &__input {
+        width: 100%;
+        height: var(--field-input-height);
+        color: var(--field-input-text-color);
+        background-color: var(--field-input-bg-color);
+        border-radius: var(--border-radius);
+        border: 1px solid var(--field-input-border-color);
+        padding: 18px 30px;
+
+        @include hover {
+            background-color: var(--field-input-hover-bg-color);
+        }
+
+        @include mobile {
+            padding: 18px 20px;
+        }
+
+        &:focus {
+            border: var(--border);
+            border-color: var(--color-accent);
+            outline: none;
+        }
+
+        &::placeholder {
+            color: var(--field-input-placeholder-color);
+        }
+
+        &_textarea {
+            height: 198px;
+            padding: 18px 30px;
+            resize: none;
+
+            @include mobile {
+                height: 132px;
+            }
+        }
+    }
+}

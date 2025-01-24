@@ -1,0 +1,38 @@
+@use '../mixins' as *;
+@use '../media' as *;
+
+.socials {
+    &__list {
+        display: flex;
+        column-gap: 20px;
+    }
+
+    &__link {
+        @include flex-center;
+        @include square(30px);
+
+        color: var(--color-dark);
+        background-color: var(--color-white);
+        border-radius: 50%;
+
+        svg {
+            width: 50%;
+        }
+
+        @include hover {
+            background-color: var(--color-accent);
+        }
+
+        &-facebook {
+            svg {
+                position: relative;
+                top: 2px;
+                width: 43%;
+                // aspect-ratio: 1;
+            }
+
+            align-items: end;
+        }
+
+    }
+}
