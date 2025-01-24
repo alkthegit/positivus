@@ -1,0 +1,73 @@
+@use '../media' as *;
+@use '../mixins' as *;
+
+.contact {
+    position: relative;
+    overflow: hidden;
+
+    @include mobile-above {
+        padding: 60px 100px 80px;
+        background-color: var(--color-grey);
+        border-radius: var(--border-radius-large);
+    }
+
+    &::after {
+        --contact-image-offset-y: 62px;
+        content: "";
+        background: center/ auto calc(100% - var(--contact-image-offset-y)*2) no-repeat url(/assets/img/contacts.svg);
+
+        position: absolute;
+        top: 50%;
+        left: 101%;
+        translate: -50% -50%;
+        height: 100%;
+        // height: calc(100% - var(--contact-image-offset-y)*2);
+        aspect-ratio: 1;
+
+        @include tablet {
+            display: none;
+        }
+
+    }
+
+    &__form,
+    &__body {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__request-types {
+        @include mobile {
+            justify-content: space-between;
+            background-color: var(--color-grey);
+            padding: 36px 52px;
+            border-radius: var(--border-radius-large) var(--border-radius-large) 0 0;
+        }
+    }
+
+    &__form {
+
+        @include tablet-above {
+            max-width: 556px;
+        }
+
+        @include mobile-above {
+            row-gap: 40px;
+        }
+    }
+
+    &__body {
+        row-gap: 25px;
+
+        @include mobile {
+            background-color: var(--color-grey);
+            padding: 10px 30px 52px;
+            margin-bottom: 30px;
+            border-radius: 0 0 var(--border-radius-large) var(--border-radius-large);
+            row-gap: 20px;
+
+        }
+    }
+
+
+}

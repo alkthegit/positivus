@@ -1,0 +1,7 @@
+@use '../media' as *;
+@use '../mixins' as *;
+
+.radios {
+    display: flex;
+    column-gap: 35px;
+}

@@ -1,0 +1,70 @@
+<section class="section container"
+    aria-label="contacts">
+    <header class="section__title"
+        aria-label="working process header">
+        <h2 class="section__header puddle-bg">Contact Us</h2>
+        <div class="section__description">
+            <p>Connect with Us: Let's Discuss Your<br />Digital Marketing Needs
+            </p>
+        </div>
+    </header>
+    <div class="section__body">
+        <div class="contact">
+            <form class="contact__form">
+                <fieldset class="contact__request-types radios">
+                    <legend class="radios__title visually-hidden">Request type</legend>
+                    <label class="radios__item radio">
+                        <input class="radio__input visually-hidden"
+                            type="radio"
+                            name="request-type"
+                            value="Say Hi"
+                            checked />
+                        <span class="radio__emulated"></span>
+                        <span class="radio__label">Say Hi</span>
+                    </label>
+                    <label class="radios__item radio">
+                        <input class="radio__input visually-hidden"
+                            type="radio"
+                            name="request-type"
+                            value="Get a Quote" />
+                        <span class="radio__emulated"></span>
+                        <span class="radio__label">Get a Quote</span>
+                    </label>
+                </fieldset>
+                <div class="contact__body">
+                    <div class="contact__field field">
+                        <label class="field__label"
+                            for="name">Name</label>
+                        <input class="field__input"
+                            type="text"
+                            name="name"
+                            id="name"
+                            placeholder="Name">
+                    </div>
+                    <div class="contact__field field">
+                        <label class="field__label"
+                            for="email">Email*</label>
+                        <input class="field__input"
+                            type="email"
+                            name="email"
+                            id="email"
+                            placeholder="Email"
+                            required>
+                    </div>
+                    <div class="contact__field field">
+                        <label class="field__label"
+                            for="message">Message*</label>
+                        <textarea class="field__input field__input_textarea"
+                            name="message"
+                            id="message"
+                            placeholder="Message"
+                            required></textarea>
+                    </div>
+                </div>
+                <button class="contact__button button button_primary"
+                    type="submit">Send Message</button>
+            </form>
+
+        </div>
+    </div>
+</section>
